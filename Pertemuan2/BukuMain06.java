@@ -11,8 +11,17 @@ public class BukuMain06 {
 
         bk1.tampilInformasi();
         bk1.terjual(5);
-        bk1.gantiHarga(6000);
+        bk1.gantiHarga(60000);
         bk1.tampilInformasi();
 
+        Buku bk2 = new Buku("self reward", "Mahera Ayesha", 160, 29, 59000);
+        bk2.terjual(11);
+        bk2.tampilInformasi();
+
+        Buku Atabik = new Buku("atabik", "atabik",90, 39, 50000);
+        Atabik.terjual(10);
+        Atabik.tampilInformasi();
+        
+        
     }
 }
