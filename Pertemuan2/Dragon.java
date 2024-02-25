@@ -23,12 +23,12 @@ public class Dragon {
     }
 
     public void moveUp() {
-        y = Math.max(y - 1, 0);
+        y = Math.max(y + 1, 0);
         detectCollision();
     }
 
     public void moveDown() {
-        y = Math.min(y + 1, height - 1);
+        y = Math.min(y - 1, height - 1);
         detectCollision();
     }
 
@@ -37,7 +37,7 @@ public class Dragon {
     }
 
     public void detectCollision() {
-        if (x < 0 || x >= width || y < 0 || y >= height) {
+        if (x <= 0 || x >= width || y <= 0 || y >= height) {
             System.out.println("Dragon collided with the boundary!");
             // Handle collision logic here
         }

@@ -286,3 +286,109 @@ output
         harga total = 1450000
         diskon : 174000
         harga bayar :1276000
+
+2.  Buat program berdasarkan class
+    Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai berikut:  
+    • Atribut x digunakan untuk menyimpan posisi koordinat x (mendatar) dari dragon, sedangkan
+    atribut y untuk posisi koordinat y (vertikal)  
+    • Atribut width digunakan untuk menyimpan lebar dari area permainan, sedangkan height
+    untuk menyimpan panjang area  
+    • Method moveLeft() digunakan untuk mengubah posisi dragon ke kiri (koordinat x akan
+    berkurang 1), sedangkan moveRight() untuk bergerak ke kanan (koordinat x akan bertambah
+    1). Perlu diperhatikan bahwa koordinat x tidak boleh lebih kecil dari 0 atau lebih besar dari
+    nilai width. Jika koordinat x < 0 atau x > width maka panggil method detectCollision()  
+    • Method moveUp() digunakan untuk mengubah posisi dragon ke atas (koordinat y akan
+    berkurang 1), sedangkan moveDown() untuk bergerak ke bawah (koordinat y akan bertambah
+    Algoritma dan Struktur Data 2023-2024
+    7
+    Tim Ajar Algoritma dan Struktur Data 2023-2024
+    Jurusan Teknologi Informasi-Politeknik Negeri Malang
+    1). Perlu diperhatikan bahwa koordinat y tidak boleh lebih kecil dari 0 atau lebih besar dari
+    nilai height. Jika koordinat y < 0 atau y > height maka panggil method detectCollision()  
+    • Method detectCollision() akan mencetak pesan “Game Over” apabila dragon menyentuh
+    ujung area permainan.
+
+         package Pertemuan2;
+         public class Dragon {
+             private int x;
+             private int y;
+             private int width;
+             private int height;
+
+             public Dragon(int initialX, int initialY, int width, int height) {
+                 this.x = initialX;
+                 this.y = initialY;
+                 this.width = width;
+                 this.height = height;
+             }
+
+             public void moveLeft() {
+                 x = Math.max(x - 1, 0);
+                 detectCollision();
+             }
+
+             public void moveRight() {
+                 x = Math.min(x + 1, width - 1);
+                 detectCollision();
+             }
+
+             public void moveUp() {
+                 y = Math.max(y + 1, 0);
+                 detectCollision();
+             }
+
+             public void moveDown() {
+                 y = Math.min(y - 1, height - 1);
+                 detectCollision();
+             }
+
+             public void printPosition() {
+                 System.out.println("Dragon position: (" + x + ", " + y + ")");
+             }
+
+             public void detectCollision() {
+                 if (x <= 0 || x >= width || y <= 0 || y >= height) {
+                     System.out.println("Dragon collided with the boundary!");
+                     // Handle collision logic here
+                 }
+             }
+
+
+         }
+         package Pertemuan2;
+
+         public class Dragonmain {
+             public static void main(String[] args) {
+                 // Example usage
+                 Dragon dragon = new Dragon(5, 5, 10, 10);
+                 dragon.printPosition();
+
+                 dragon.moveLeft();
+                 dragon.moveLeft();
+                 dragon.moveLeft();
+                 dragon.moveLeft();
+                 dragon.moveLeft();
+                 dragon.printPosition();
+                 dragon.moveUp();
+                 dragon.printPosition();
+                 dragon.moveRight();
+                 dragon.printPosition();
+                 dragon.moveDown();
+                 dragon.moveDown();
+                 dragon.printPosition();
+
+
+             }
+         }
+
+output
+
+        Dragon position: (5, 5)
+        Dragon collided with the boundary!
+        Dragon position: (0, 5)
+        Dragon collided with the boundary!
+        Dragon position: (0, 6)
+        Dragon position: (1, 6)
+        Dragon position: (1, 4)
+
+"Dragon collided with the boundary!" terjadi saat pergerakan dragon menyentuh 0 dan max dari width dan height.

@@ -11,38 +11,11 @@ public class Dragonmain {
         dragon.moveLeft();
         dragon.moveLeft();
         dragon.moveLeft();
-        dragon.moveLeft();
-        dragon.moveLeft();
-        dragon.moveLeft();
         dragon.printPosition();
-
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
-        dragon.moveUp();
         dragon.moveUp();
         dragon.printPosition();
-
-        dragon.moveRight();
-        dragon.moveRight();
-        dragon.moveRight();
-        dragon.moveRight();
-        dragon.moveRight();
-        dragon.moveRight();
         dragon.moveRight();
         dragon.printPosition();
-
-        dragon.moveDown();
-        dragon.moveDown();
-        dragon.moveDown();
-        dragon.moveDown();
-        dragon.moveDown();
         dragon.moveDown();
         dragon.moveDown();
         dragon.printPosition();
