@@ -53,7 +53,7 @@ public class Nilai06 {
         }else if (73 < nilaiakhir && nilaiakhir <= 80){
             System.out.println("nilai huruf = B+");
         }else if (65 < nilaiakhir && nilaiakhir <= 73){
-            System.out.println("nilai  = B");
+            System.out.println("nilai huruf = B");
         }else if (60 < nilaiakhir && nilaiakhir <= 65){
             System.out.println("nilai huruf = C+");
         }else if (50 < nilaiakhir && nilaiakhir <= 60){
