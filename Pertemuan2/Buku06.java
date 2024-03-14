@@ -50,9 +50,9 @@ class Buku {
         hargabayar = hargatotal - diskon;
         return hargabayar;
     }
-
+//default constructor
     public Buku() {
-
+//construct
     }
     public Buku(String judul, String Pengarang, int halaman, int stok, int harga) {
         this.judul = judul;
