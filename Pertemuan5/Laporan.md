@@ -413,12 +413,178 @@ output program
 
 ### Pertanyaan
 
-1. Mengapa terdapat formulasi return value berikut?Jelaskan  
-   Formulasi return lsum + rsum; digunakan untuk menggabungkan hasil dari kedua panggilan rekursif pada metode totalDC() dalam pendekatan Divide and Conquer.
-   lsum adalah hasil dari panggilan rekursif untuk bagian kiri array, yang menyatakan total keuntungan dari bagian kiri array. rsum adalah hasil dari panggilan rekursif untuk bagian kanan array, yang menyatakan total keuntungan dari bagian kanan array. Dengan cara ini, lsum + rsum menggabungkan total keuntungan dari kedua bagian array tersebut, memberikan total keuntungan dari seluruh array.
-2. Kenapa dibutuhkan variable mid pada method TotalDC()?  
-   Variabel mid pada metode totalDC() diperlukan untuk menentukan indeks tengah dari array yang akan digunakan untuk membagi masalah menjadi submasalah yang lebih kecil saat menggunakan pendekatan Divide and Conquer.
-3. Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja.
-   Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa
-   perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan
-   dengan program!
+1.  Mengapa terdapat formulasi return value berikut?Jelaskan  
+    Formulasi return lsum + rsum; digunakan untuk menggabungkan hasil dari kedua panggilan rekursif pada metode totalDC() dalam pendekatan Divide and Conquer.
+    lsum adalah hasil dari panggilan rekursif untuk bagian kiri array, yang menyatakan total keuntungan dari bagian kiri array. rsum adalah hasil dari panggilan rekursif untuk bagian kanan array, yang menyatakan total keuntungan dari bagian kanan array. Dengan cara ini, lsum + rsum menggabungkan total keuntungan dari kedua bagian array tersebut, memberikan total keuntungan dari seluruh array.
+2.  Kenapa dibutuhkan variable mid pada method TotalDC()?  
+    Variabel mid pada metode totalDC() diperlukan untuk menentukan indeks tengah dari array yang akan digunakan untuk membagi masalah menjadi submasalah yang lebih kecil saat menggunakan pendekatan Divide and Conquer.
+3.  Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja.
+    Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa
+    perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan
+    dengan program!
+
+         package Pertemuan5;
+         import java.util.Scanner;
+
+         public class CompanyProfit {
+             public int numCompanies;
+             public sum[] companies;
+
+             public CompanyProfit(int numCompanies) {
+                 this.numCompanies = numCompanies;
+                 companies = new sum[numCompanies];
+             }
+
+             public void setCompany(int index, sum company) {
+                 companies[index] = company;
+             }
+
+             public static void main(String[] args) {
+                 Scanner sc = new Scanner(System.in);
+                 System.out.print("Masukkan jumlah perusahaan: ");
+                 int numCompanies = sc.nextInt();
+
+                 CompanyProfit profitCalculator = new CompanyProfit(numCompanies);
+
+                 for (int i = 0; i < numCompanies; i++) {
+                     System.out.print("Masukkan jumlah bulan untuk perusahaan ke-" + (i + 1) + ": ");
+                     int months = sc.nextInt();
+
+                     sum companyProfit = new sum(months);
+
+                     System.out.println("Masukkan keuntungan untuk setiap bulan:");
+                     for (int j = 0; j < months; j++) {
+                         System.out.print("Keuntungan bulan ke-" + (j + 1) + ": ");
+                         companyProfit.keuntungan[j] = sc.nextDouble();
+                     }
+
+                     profitCalculator.setCompany(i, companyProfit);
+                 }
+
+                 System.out.println("\nTotal keuntungan setiap perusahaan:");
+                 for (int i = 0; i < numCompanies; i++) {
+                     sum currentCompany = profitCalculator.companies[i];
+                     System.out.println("Perusahaan ke-" + (i + 1) + ":");
+                     System.out.println("Total keuntungan (Brute Force): " + currentCompany.totalBF(currentCompany.keuntungan));
+                     System.out.println("Total keuntungan (Divide and Conquer): " + currentCompany.totalDC(currentCompany.keuntungan, 0, currentCompany.elemen - 1));
+                     System.out.println();
+                 }
+             }
+         }
+
+output program
+
+        Masukkan jumlah perusahaan: 2
+        Masukkan jumlah bulan untuk perusahaan ke-1: 3
+        Masukkan keuntungan untuk setiap bulan:
+        Keuntungan bulan ke-1: 2
+        Keuntungan bulan ke-2: 3
+        Keuntungan bulan ke-3: 3
+        Masukkan jumlah bulan untuk perusahaan ke-2: 3
+        Masukkan keuntungan untuk setiap bulan:
+        Keuntungan bulan ke-1: 2
+        Keuntungan bulan ke-2: 3
+        Keuntungan bulan ke-3: 2
+
+        Total keuntungan setiap perusahaan:
+        Total keuntungan (Divide and Conquer): 8.0
+
+        Perusahaan ke-2:
+        Total keuntungan (Brute Force): 7.0
+        Total keuntungan (Divide and Conquer): 7.0
+
+1.  Sebuah showroom memiliki daftar mobil dengan data sesuai tabel di bawah ini
+    Tentukan:
+    a) top_acceleration tertinggi menggunakan Divide and Conquer!
+    b) top_acceleration terendah menggunakan Divide and Conquer!
+    c) Rata-rata top_power dari seluruh mobil menggunakan Brute Force.
+
+            package Pertemuan5;
+            public class Showroom {
+
+                // Struktur data untuk merepresentasikan mobil
+                class Mobil {
+                    String merk;
+                    String tipe;
+                    int tahun;
+                    int top_acceleration;
+                    int top_power;
+
+                    public Mobil(String merk, String tipe, int tahun, int top_acceleration, int top_power) {
+                        this.merk = merk;
+                        this.tipe = tipe;
+                        this.tahun = tahun;
+                        this.top_acceleration = top_acceleration;
+                        this.top_power = top_power;
+                    }
+                }
+
+                // Metode untuk mencari top_acceleration tertinggi menggunakan Divide and Conquer
+                private int maxAcceleration(Mobil[] mobil, int low, int high) {
+                    if (low == high) {
+                        return mobil[low].top_acceleration;
+                    }
+
+                    int mid = (low + high) / 2;
+                    int leftMax = maxAcceleration(mobil, low, mid);
+                    int rightMax = maxAcceleration(mobil, mid + 1, high);
+
+                    return Math.max(leftMax, rightMax);
+                }
+
+                // Metode untuk mencari top_acceleration terendah menggunakan Divide and Conquer
+                private int minAcceleration(Mobil[] mobil, int low, int high) {
+                    if (low == high) {
+                        return mobil[low].top_acceleration;
+                    }
+
+                    int mid = (low + high) / 2;
+                    int leftMin = minAcceleration(mobil, low, mid);
+                    int rightMin = minAcceleration(mobil, mid + 1, high);
+
+                    return Math.min(leftMin, rightMin);
+                }
+
+                // Metode untuk menghitung rata-rata top_power dari seluruh mobil menggunakan Brute Force
+                private double averagePower(Mobil[] mobil) {
+                    double totalPower = 0;
+                    for (Mobil car : mobil) {
+                        totalPower += car.top_power;
+                    }
+                    return totalPower / mobil.length;
+                }
+
+                public static void main(String[] args) {
+                    Showroom showroom = new Showroom();
+
+                    // Data mobil
+                    Mobil[] mobil = {
+                        showroom.new Mobil("BMW", "M2 Coupe", 2016, 6816, 728),
+                        showroom.new Mobil("Ford", "Fiesta ST", 2014, 3921, 575),
+                        showroom.new Mobil("Nissan", "370Z", 2009, 4360, 657),
+                        showroom.new Mobil("Subaru", "BRZ", 2014, 4058, 609),
+                        showroom.new Mobil("Subaru", "Impreza WRX STI", 2013, 6255, 703),
+                        showroom.new Mobil("Toyota", "AE86 Trueno", 1986, 3700, 553),
+                        showroom.new Mobil("Toyota", "86/GT86", 2014, 4180, 609),
+                        showroom.new Mobil("Volkswagen", "Golf GTI", 2014, 4180, 631)
+                    };
+
+                    // Mencari top_acceleration tertinggi
+                    int maxAcc = showroom.maxAcceleration(mobil, 0, mobil.length - 1);
+                    System.out.println("Top acceleration tertinggi: " + maxAcc);
+
+                    // Mencari top_acceleration terendah
+                    int minAcc = showroom.minAcceleration(mobil, 0, mobil.length - 1);
+                    System.out.println("Top acceleration terendah: " + minAcc);
+
+                    // Menghitung rata-rata top_power
+                    double avgPower = showroom.averagePower(mobil);
+                    System.out.println("Rata-rata top power: " + avgPower);
+                }
+            }
+
+output program
+
+Top acceleration tertinggi: 6816
+Top acceleration terendah: 3700
+Rata-rata top power: 633.125
