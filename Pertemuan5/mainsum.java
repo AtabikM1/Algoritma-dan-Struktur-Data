@@ -17,7 +17,7 @@ public class mainsum {
         }
 
         System.out.println("=====================================");
-        System.out.println("algoritma bruto force");
+        System.out.println("algoritma brute force");
         System.out.println("total keuntungan perusahaan selama "+ sm.elemen + " bulan adalah = "+ sm.totalBF(sm.keuntungan));
         System.out.println("=====================================");
         System.out.println("algoritma divide conquer");

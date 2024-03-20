@@ -364,7 +364,185 @@ mengembangkan backend untuk sistem pemesanan/reservasi akomodasi (penginapan), s
 satu fiturnya adalah menampilkan daftar penginapan yang tersedia berdasarkan pilihan filter
 yang diinginkan user. Daftar penginapan ini harus dapat disorting berdasarkan
 
-1. Harga dimulai dari harga termurah ke harga tertinggi.
-2. Rating bintang penginapan dari bintang tertinggi (5) ke terendah (1)
-   Buatlah proses sorting data untuk kedua filter tersebut dengan menggunakan algoritma
-   bubble sort dan selection sort.
+1.  Harga dimulai dari harga termurah ke harga tertinggi.
+2.  Rating bintang penginapan dari bintang tertinggi (5) ke terendah (1)
+    Buatlah proses sorting data untuk kedua filter tersebut dengan menggunakan algoritma
+    bubble sort dan selection sort.
+
+             package Pertemuan6;
+
+             public class Hotel {
+                 String nama, kota;
+                 int harga;
+                 Byte bintang;
+
+                 Hotel(String n, String k, int h, Byte b){
+                     nama = n;
+                     kota = k;
+                     harga = h;
+                     bintang = b;
+                 }
+             }
+             package Pertemuan6;
+
+             public class MainHotel {
+                 public static void main(String[] args) {
+                     HotelServis hotelservis = new HotelServis();
+                     Hotel h1 = new Hotel("valhalla", "surabaya", 200, (byte)5);
+                     Hotel h2 = new Hotel("jw marriot", "surabaya", 400, (byte)1);
+                     Hotel h3 = new Hotel("aston", "surabaya", 700, (byte)3);
+                     Hotel h4 = new Hotel("empire", "surabaya", 3400, (byte)4);
+                     Hotel h5 = new Hotel("grand impala", "surabaya", 100, (byte)5);
+                     hotelservis.tambah(h1);
+                     hotelservis.tambah(h2);
+                     hotelservis.tambah(h3);
+                     hotelservis.tambah(h4);
+                     hotelservis.tambah(h5);
+
+                     System.out.println("data hotel sebelum sorting =");
+                     hotelservis.tampilAll();
+
+                     System.out.println("Sorting dengan buble sort");
+                     hotelservis.bubblesort();
+                     hotelservis.tampilAll();
+
+                     System.out.println("sorting dengan selection sort");
+                     hotelservis.selectionsort();
+                     hotelservis.tampilAll();
+                 }
+             }
+             package Pertemuan6;
+
+             public class HotelServis {
+                 Hotel rooms[] = new Hotel[5];
+                 int idx;
+
+                 void tambah(Hotel H){
+                     if(idx<rooms.length){
+                         rooms[idx] = H;
+                         idx++;
+                     }else{
+                         System.out.println("data hotel sudah penuh");
+                     }
+                 }
+
+                 void tampilAll(){
+                     for(int i = 0; i < idx; i++){
+                         System.out.println("Nama hotel = " + rooms[i].nama);
+                         System.out.println("Kota = "+ rooms[i].kota);
+                         System.out.println("Harga = " + rooms[i].harga);
+                         System.out.println("Bintang = "+ rooms[i].bintang);
+                         System.out.println("==========");
+
+                     }
+
+                 }
+
+
+                 void bubblesort(){
+                     for(int i = 0; i < rooms.length-1; i++){
+                         for(int j=1; j < rooms.length-i; j++){
+                             if(rooms[j].harga > rooms[j-1].harga){
+                                 Hotel tmp = rooms[j];
+                                 rooms[j] = rooms[j-1];
+                                 rooms[j-1] = tmp;
+                             }
+                         }
+                     }
+                 }
+
+                 void selectionsort(){
+                     for(int i = 0; i < rooms.length -1; i++){
+                         int idxmin = i;
+                         for(int j = i+1; j < rooms.length; j++){
+                             if(rooms[j].bintang < rooms[idxmin].bintang){
+                                 idxmin = j;
+                             }
+                         }
+                         //swap
+                         Hotel tmp = rooms[idxmin];
+                         rooms[idxmin] = rooms[i];
+                         rooms[i]= tmp;
+                     }
+                 }
+             }
+
+output program
+
+        data hotel sebelum sorting =
+        Nama hotel = valhalla
+        Kota = surabaya
+        Harga = 200
+        Bintang = 5
+        ==========
+        Nama hotel = jw marriot
+        Kota = surabaya
+        Harga = 400
+        Bintang = 1
+        ==========
+        Nama hotel = aston
+        Kota = surabaya
+        Harga = 700
+        Bintang = 3
+        ==========
+        Nama hotel = empire
+        Kota = surabaya
+        Harga = 3400
+        Bintang = 4
+        ==========
+        Nama hotel = grand impala
+        Kota = surabaya
+        Harga = 100
+        Bintang = 5
+        ==========
+        Sorting dengan buble sort
+        Nama hotel = empire
+        Kota = surabaya
+        Harga = 3400
+        Bintang = 4
+        ==========
+        Nama hotel = aston
+        Kota = surabaya
+        Harga = 700
+        Bintang = 3
+        ==========
+        Nama hotel = jw marriot
+        Kota = surabaya
+        Harga = 400
+        Bintang = 1
+        ==========
+        Nama hotel = valhalla
+        Kota = surabaya
+        Harga = 200
+        Bintang = 5
+        ==========
+        Nama hotel = grand impala
+        Kota = surabaya
+        Harga = 100
+        Bintang = 5
+        ==========
+        sorting dengan selection sort
+        Nama hotel = jw marriot
+        Kota = surabaya
+        Harga = 400
+        Bintang = 1
+        ==========
+        Nama hotel = aston
+        Kota = surabaya
+        Harga = 700
+        Bintang = 3
+        ==========
+        Nama hotel = empire
+        Kota = surabaya
+        Harga = 3400
+        Bintang = 4
+        ==========
+        Nama hotel = valhalla
+        Kota = surabaya
+        Harga = 200
+        Bintang = 5
+        ==========
+        Nama hotel = grand impala
+        Kota = surabaya
+        Harga = 100
+        Bintang = 5
