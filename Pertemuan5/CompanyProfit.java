@@ -8,8 +8,7 @@ public class CompanyProfit {
     public CompanyProfit(int numCompanies) {
         this.numCompanies = numCompanies;
         companies = new sum[numCompanies];
-    }
-
+       
     public void setCompany(int index, sum company) {
         companies[index] = company;
     }
