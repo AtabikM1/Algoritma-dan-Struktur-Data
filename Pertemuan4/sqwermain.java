@@ -9,6 +9,6 @@ public class sqwermain {
             System.out.println("hasil = " + cindi[i].luas);
         }
         sqwer lantai = new sqwer(0);
-        lantai.input();
+        // lantai.input();
     }
 }
