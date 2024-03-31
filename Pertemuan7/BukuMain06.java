@@ -39,7 +39,7 @@ public class BukuMain06 {
         int posisi = data.findSeqSearch(cari);
         data.tampilPosisi(cari, posisi);
         data.tampildata(cari, posisi);
-            // Mencari buku dengan kode buku yang dicari
+        // Mencari buku dengan kode buku yang dicari
         Buku dataBuku = data.FindBuku(cari);
         dataBuku.tampilDataBuku();
 
