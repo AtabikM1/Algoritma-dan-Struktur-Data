@@ -26,7 +26,7 @@ public class mergeSort {
                 c++;
             }
             
-            // Menyalin sisa elemen dari sub-array kiri jika masih ada
+            // Menyalin sisa elemen dari sub-array kiri jika masih ada.
             while (a <= middle) {
                 data[c] = temp[a];
                 a++;
