@@ -74,8 +74,8 @@ public class postfix06 {
                 }
                 push(c);
             }
-            return P;
         }
+        return P;
         
     }
 }

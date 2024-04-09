@@ -487,4 +487,49 @@ Apabila return
 value diubah dengan nilai berbeda-beda setiap case-nya, apa yang terjadi?
 sebagai ketentuan untuk mengurutkan infix menjadi postfix. apabila nilai dari return value tersebut dirubah dengan nilai lain, maka akan merubah urutan pengoperasian postfix 2. Jelaskan alur kerja method konversi!
 
-alur method konversi pada class stack konversi dimulai dengan parameter string Q. dalam method tersebut terdapat atribut String P dan char c. proses looping dilakukan unutk mengidentifikasi nilai infix yang kita masukkan, kemudian didalamnya masuk pada struktur pemilihan untuk mengidentifikasi
+2. Jelaskan alur kerja method konversi!
+
+alur method konversi pada class stack konversi dimulai dengan parameter string Q. dalam method tersebut terdapat atribut String P dan char c. proses looping dilakukan unutk mengidentifikasi nilai infix yang kita masukkan, kemudian didalamnya masuk pada struktur pemilihan untuk mengidentifikasi pada ekspresi infix apakah input tersebut merupakan operand atau operator, dan pemilihan tersebut akan memanggil method push(). pop().
+
+3. pada method konversi, apa fungsi dari potongan kode berikut?
+
+untuk mengambil karakter dari String q pada indeks yang telah ditentukan oleh looping, kemudian menyimpan karakter tersebut ke dalam variable 'c'.
+
+
+### Latihan Praktikum
+
+Perhatikan dan gunakan kembali kode program pada Percobaan 1. Tambahkan dua method berikut
+pada class Gudang :
+
+- Method lihatBarangTerbawah digunakan untuk mengecek barang pada tumpukan terbawah
+
+            barang06 lihatBarangTerbawah(){
+                if(!cekkosong()){
+                    barang06 barangTerbawah = tumpukan[0];
+                    System.out.println("barang terbawah : "+ barangTerbawah.nama);
+                    return barangTerbawah;
+                } else {
+                    System.out.println("tumpukkan barang kosong. ");
+                    return null;
+                }
+            }
+
+- Method cariBarang digunakan untuk mencari ada atau tidaknya barang berdasarkan kode
+barangnya atau nama barangnya
+
+            barang06 caribarang(int kodecari, String namabarang){
+                if(!cekkosong()){
+                    for(int i= top; i>=0; i--){
+                        if(tumpukan[i].kode ==kodecari || tumpukan[i].nama == namabarang){
+                            System.out.println("hasil pencarian = "+tumpukan[i].nama);
+                            return tumpukan[i];
+                        }
+                    }
+                    return null;
+                }else{
+                    System.out.println("not found");
+                    return null;
+                }
+            }
+
+            

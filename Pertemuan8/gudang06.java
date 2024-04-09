@@ -56,6 +56,16 @@ public class gudang06 {
             return null;
         }
     }
+    barang06 lihatBarangTerbawah(){
+        if(!cekkosong()){
+            barang06 barangTerbawah = tumpukan[0];
+            System.out.println("barang terbawah : "+ barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("tumpukkan barang kosong. ");
+            return null;
+        }
+    }
     void tampilkanbarang(){
         if(!cekkosong()){
             System.out.println("rincian tumpukan barang di gudang: ");
@@ -84,4 +94,18 @@ public class gudang06 {
         return biner;
     }
     
+    barang06 caribarang(int kodecari, String namabarang){
+        if(!cekkosong()){
+            for(int i= top; i>=0; i--){
+                if(tumpukan[i].kode ==kodecari || tumpukan[i].nama == namabarang){
+                    System.out.println("hasil pencarian = "+tumpukan[i].nama);
+                    return tumpukan[i];
+                }
+            }
+            return null;
+        }else{
+            System.out.println("not found");
+            return null;
+        }
+    }
 }

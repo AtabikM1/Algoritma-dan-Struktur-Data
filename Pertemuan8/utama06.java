@@ -3,6 +3,7 @@ package Pertemuan8;
 import java.util.Scanner;
 
 public class utama06 {
+    
     public static void main(String[] args) {
         gudang06 gudang = new gudang06(7);
         Scanner sc = new Scanner(System.in);
@@ -34,9 +35,16 @@ public class utama06 {
                     gudang.tampilkanbarang();
                     break;
                 case 4:
+                    gudang.lihatBarangTerbawah();
+                case 7:
                     gudang.lihatBarangTeratas();
+                case 6:
+                    int kodecari = sc.nextInt();
+                    String namabarang = sc.nextLine();
+                    gudang.caribarang(kodecari, namabarang);
                 case 5:
                     break;
+
                 default:
                     System.out.println("pilihan tidak valid, silahkan coba lagi. ");    
                     
