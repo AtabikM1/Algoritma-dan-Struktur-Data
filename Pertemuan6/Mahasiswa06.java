@@ -1,11 +1,11 @@
 package Pertemuan6;
 
-public class Mahasiswa {
+public class Mahasiswa06 {
     String nama;
     int thnMasuk, umur;
     double ipk;
 
-    Mahasiswa(String n, int t, int u, double i){
+    Mahasiswa06(String n, int t, int u, double i){
         nama = n;
         thnMasuk = t;
         umur = u;

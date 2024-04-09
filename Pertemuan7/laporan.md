@@ -8,6 +8,16 @@
 
 ---
 
+Nama: Atabik Mutawakilalallah
+
+NIM: 2341720090
+
+No. Absen: 06
+
+Kelas: TI-1B
+
+---
+
 ### 6.2.1. Langkah-langkah Percobaan Sequential Search
 
 buat class

@@ -1,10 +1,10 @@
 package Pertemuan7;
 
-public class Buku {
+public class Buku06 {
     int kodebuku, tahunterbit, stok;
     String judul, pengarang;
 
-    Buku(int kodebuku, String judul, int tahunterbit, String pengarang, int stok){
+    Buku06(int kodebuku, String judul, int tahunterbit, String pengarang, int stok){
         this.kodebuku = kodebuku;
         this.judul = judul;
         this.tahunterbit = tahunterbit;

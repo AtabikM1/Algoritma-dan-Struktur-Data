@@ -1,10 +1,10 @@
 package Pertemuan7;
 
 public class Pencarianbuku06 {
-    Buku lisBuku[] = new Buku[5];
+    Buku06 lisBuku[] = new Buku06[5];
     int idx;
 
-    void tambah(Buku m){
+    void tambah(Buku06 m){
         if (idx < lisBuku.length){
             lisBuku[idx] = m;
             idx++;
@@ -13,7 +13,7 @@ public class Pencarianbuku06 {
         }
     }
     void tampil(){
-        for (Buku m :lisBuku){
+        for (Buku06 m :lisBuku){
             m.tampilDataBuku();
         }
     }
@@ -47,7 +47,7 @@ public class Pencarianbuku06 {
             System.out.println("data "+ x + "tidak ditemukan");
         }
     }
-    public Buku FindBuku(int cari) {
+    public Buku06 FindBuku(int cari) {
         int posisi = -1;
         for (int j = 0; j < lisBuku.length; j++) {
             if (lisBuku[j].kodebuku == cari) {
@@ -62,7 +62,7 @@ public class Pencarianbuku06 {
         for (int i = 0; i < lisBuku.length - 1; i++) {
             for (int j = 1; j < lisBuku.length - i; j++) {
                 if (lisBuku[j].kodebuku < lisBuku[j - 1].kodebuku) {
-                    Buku tmp = lisBuku[j];
+                    Buku06 tmp = lisBuku[j];
                     lisBuku[j] = lisBuku[j - 1];
                     lisBuku[j - 1] = tmp;
                 }

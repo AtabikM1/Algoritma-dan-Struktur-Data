@@ -1,6 +1,6 @@
 package Pertemuan7;
 
-public class mergeSort {
+public class mergeSort06 {
     public void mergeSorting(int[] data){
         sort(data, 0, data.length - 1);
     }

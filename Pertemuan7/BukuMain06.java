@@ -23,7 +23,7 @@ public class BukuMain06 {
             System.out.print("Stock \t :");
             int stok = s.nextInt();
 
-            Buku m = new Buku(kodebuku, judulBuku, tahunterbit, pengarang, stok);
+            Buku06 m = new Buku06(kodebuku, judulBuku, tahunterbit, pengarang, stok);
             data.tambah(m);
         }
         System.out.println("--------------------");
@@ -40,7 +40,7 @@ public class BukuMain06 {
         data.tampilPosisi(cari, posisi);
         data.tampildata(cari, posisi);
         // Mencari buku dengan kode buku yang dicari
-        Buku dataBuku = data.FindBuku(cari);
+        Buku06 dataBuku = data.FindBuku(cari);
         dataBuku.tampilDataBuku();
 
         System.out.println("==================");

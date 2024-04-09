@@ -1,6 +1,6 @@
 package Pertemuan6;
 
-public class MainHotel {
+public class MainHotel06 {
     public static void main(String[] args) {
         HotelServis hotelservis = new HotelServis();
         Hotel h1 = new Hotel("valhalla", "surabaya", 200, (byte)5);

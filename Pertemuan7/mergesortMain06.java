@@ -4,7 +4,7 @@ public class mergesortMain06 {
     public static void main(String[] args) {
         int data[] = {10, 40, 30, 50, 70, 20, 100, 90};
         System.out.println("sorting dengan merge  sort");   
-        mergeSort msort = new mergeSort();
+        mergeSort06 msort = new mergeSort06();
         System.out.println("data awal");
         msort.printarray(data);
         msort.mergeSorting(data);

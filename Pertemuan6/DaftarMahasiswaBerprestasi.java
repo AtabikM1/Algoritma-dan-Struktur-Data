@@ -1,10 +1,10 @@
 package Pertemuan6;
 
 public class DaftarMahasiswaBerprestasi {
-    Mahasiswa listMhs[] = new Mahasiswa[5];
+    Mahasiswa06 listMhs[] = new Mahasiswa06[5];
     int idx;
 
-    void tambah(Mahasiswa m){
+    void tambah(Mahasiswa06 m){
         if(idx<listMhs.length){
             listMhs[idx] = m;
             idx++;
@@ -14,7 +14,7 @@ public class DaftarMahasiswaBerprestasi {
     }
 
     void tampil(){
-        for(Mahasiswa m : listMhs){
+        for(Mahasiswa06 m : listMhs){
             m.tampil();
             System.out.println("--------");
         }
@@ -23,7 +23,7 @@ public class DaftarMahasiswaBerprestasi {
         for(int i=0; i<listMhs.length-1; i++){
             for(int j = 1; j < listMhs.length-i; j++){
                 if(listMhs[j].ipk > listMhs[j-1].ipk){
-                    Mahasiswa tmp = listMhs[j];
+                    Mahasiswa06 tmp = listMhs[j];
                     listMhs[j] = listMhs[j-1];
                     listMhs[j-1] = tmp;
                 }
@@ -39,7 +39,7 @@ public class DaftarMahasiswaBerprestasi {
                 }
             }
             //swap
-            Mahasiswa tmp = listMhs[idxmin];
+            Mahasiswa06 tmp = listMhs[idxmin];
             listMhs[idxmin] = listMhs[i];
             listMhs[i] = tmp;
 
@@ -47,7 +47,7 @@ public class DaftarMahasiswaBerprestasi {
     }
     void insertionsort(){
         for (int i =1; i < listMhs.length; i++){
-            Mahasiswa temp = listMhs[i];
+            Mahasiswa06 temp = listMhs[i];
             int j = i;
             while(j > 0 && listMhs[j - 1].ipk > temp.ipk){
                 listMhs[j] = listMhs[j-1];
