@@ -2,14 +2,15 @@ package Pertemuan5;
 import java.util.Scanner;
 public class mainpangkat {
     public static void main(String[] args) {
+        
         Scanner sc = new Scanner(System.in);
         System.out.println("==================");
         System.out.print("masukkan jumlah elemen yang dihitung = ");
         int elemen = sc.nextInt();
 
-        pangkat[] png = new pangkat[elemen];
+        pangkat06[] png = new pangkat06[elemen];
         for(int i = 0; i < elemen; i++){
-            png[i] = new pangkat();
+            png[i] = new pangkat06();
             System.out.print("masukkan nilai yang hendak dipangkatkan :");
             png[i].nilai = sc.nextInt();
             System.out.print("masukkan nilai pemangkat : ");

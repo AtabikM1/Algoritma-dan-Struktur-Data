@@ -1,11 +1,11 @@
 package Pertemuan5;
 import java.util.Scanner;
 
-public class CompanyProfit {
+public class CompanyProfit06 {
     public int numCompanies;
     public sum[] companies;
 
-    public CompanyProfit(int numCompanies) {
+    public CompanyProfit06(int numCompanies) {
         this.numCompanies = numCompanies;
         companies = new sum[numCompanies];
     }
@@ -19,7 +19,7 @@ public class CompanyProfit {
         System.out.print("Masukkan jumlah perusahaan: ");
         int numCompanies = sc.nextInt();
 
-        CompanyProfit profitCalculator = new CompanyProfit(numCompanies);
+        CompanyProfit06 profitCalculator = new CompanyProfit06(numCompanies);
 
         for (int i = 0; i < numCompanies; i++) {
             System.out.print("Masukkan jumlah bulan untuk perusahaan ke-" + (i + 1) + ": ");
