@@ -1,4 +1,4 @@
-package Practice;
+package SelfPracticeTrial;
 
 public class empployee {
     String name;

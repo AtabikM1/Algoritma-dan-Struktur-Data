@@ -1,4 +1,4 @@
-package Practice;
+package SelfPracticeTrial;
 
 public class mainempploy {
     public static void main(String[] args) {

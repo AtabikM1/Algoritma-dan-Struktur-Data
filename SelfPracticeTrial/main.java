@@ -1,5 +1,4 @@
-package Practice;
-
+package SelfPracticeTrial;
 public class main {
     public static void main(String[] args) {
         //objek dari klass library(ini bikin perpusnya)

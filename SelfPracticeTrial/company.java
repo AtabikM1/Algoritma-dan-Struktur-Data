@@ -1,5 +1,4 @@
-package Practice;
-
+package SelfPracticeTrial;
 public class company {
     empployee []empployees;
     int countemploy;

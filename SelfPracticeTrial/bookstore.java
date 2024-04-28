@@ -1,4 +1,4 @@
-package Practice;
+package SelfPracticeTrial;
 
 public class bookstore {
     Booku [] bookss;
