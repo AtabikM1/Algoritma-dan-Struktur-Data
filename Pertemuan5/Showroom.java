@@ -19,7 +19,7 @@ public class Showroom {
     }
 
     // Metode untuk mencari top_acceleration tertinggi menggunakan Divide and Conquer
-    private int maxAcceleration(Mobil[] mobil, int low, int high) {
+    int maxAcceleration(Mobil[] mobil, int low, int high) {
         if (low == high) {
             return mobil[low].top_acceleration;
         }
@@ -32,7 +32,7 @@ public class Showroom {
     }
 
     // Metode untuk mencari top_acceleration terendah menggunakan Divide and Conquer
-    private int minAcceleration(Mobil[] mobil, int low, int high) {
+    int minAcceleration(Mobil[] mobil, int low, int high) {
         if (low == high) {
             return mobil[low].top_acceleration;
         }
@@ -45,7 +45,7 @@ public class Showroom {
     }
 
     // Metode untuk menghitung rata-rata top_power dari seluruh mobil menggunakan Brute Force
-    private double averagePower(Mobil[] mobil) {
+    double averagePower(Mobil[] mobil) {
         double totalPower = 0;
         for (Mobil car : mobil) {
             totalPower += car.top_power;
