@@ -124,10 +124,10 @@ public class Linkedlist {
     void performEliminationAndPlayoffs() {
         if (head == null) return;
 
-        // Sort teams
+        
         head = urutkantim(head);
 
-        // Get top 4 teams
+        
         Node current = head;
         Node[] top4 = new Node[4];
         for (int i = 0; i < 4 && current != null; i++) {
@@ -140,7 +140,7 @@ public class Linkedlist {
             return;
         }
 
-        // Semifinals: 1st vs 4th and 2nd vs 3rd
+        // semifinal
         System.out.println("Semifinal:");
         TimVoli finalist1 = playMatch(top4[0].tim, top4[3].tim);
         TimVoli finalist2 = playMatch(top4[1].tim, top4[2].tim);
@@ -153,8 +153,7 @@ public class Linkedlist {
     }
 
     TimVoli playMatch(TimVoli TimVoli1, TimVoli TimVoli2) {
-        // Simulate a match, assuming TimVoli1 wins for demonstration purposes
         System.out.println(TimVoli1.nama + " vs " + TimVoli2.nama + ": " + TimVoli1.nama + " menang");
-        return TimVoli1; // Simulate team1 as the winner
+        return TimVoli1;
     }
 }
