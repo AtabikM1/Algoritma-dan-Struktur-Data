@@ -11,7 +11,7 @@ public class gudang06 {
         top = -1;
     }
     boolean cekkosong(){
-        if (top == -1){
+        if (top == -1){ 
             return true;
         } else {
             return false;

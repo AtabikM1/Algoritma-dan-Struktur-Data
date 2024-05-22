@@ -59,7 +59,7 @@ public class QueueBank {
         }
     }
 
-    void clear(){//untuk menghappus semua elemen pada queue
+    void clear(){//untuk menghapus semua elemen pada queue
         if(!isEmpty()){
             front = rear = -1;
             size = 0;
