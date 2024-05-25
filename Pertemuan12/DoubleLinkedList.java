@@ -1,24 +1,22 @@
 package Pertemuan12;
 
-import SelfPracticeTrial.perusahaan;
-
 public class DoubleLinkedList {
     Node head;
-        int size;
+    int size;
 
-    DoubleLinkedList(){
+    public DoubleLinkedList() {
         head = null;
         size = 0;
-    }         
-    
-    boolean isEmpty(){
+    }
+
+    public boolean isEmpty() {
         return head == null;
     }
 
-    void addFirst(int item){
-        if(isEmpty()){
+    public void addFirst(int item) {
+        if (isEmpty()) {
             head = new Node(null, item, null);
-        }else{
+        } else {
             Node newNode = new Node(null, item, head);
             head.prev = newNode;
             head = newNode;
@@ -26,12 +24,12 @@ public class DoubleLinkedList {
         size++;
     }
 
-    void addLast(int item){
-        if(isEmpty()){
+    public void addLast(int item) {
+        if (isEmpty()) {
             addFirst(item);
-        }else{
+        } else {
             Node current = head;
-            while (current.next != null){
+            while (current.next != null) {
                 current = current.next;
             }
             Node newNode = new Node(current, item, null);
@@ -39,51 +37,55 @@ public class DoubleLinkedList {
             size++;
         }
     }
-    void add(int item, int index) throws Exception{
-        if(isEmpty()){
+
+    public void add(int item, int index) throws Exception {
+        if (isEmpty()) {
             addFirst(item);
-        }else if(index < 0|| index > size){
+        } else if (index < 0 || index > size) {
             throw new Exception("nilai indeks di luar batas");
-        }else{
-            Node current  = head;
+        } else {
+            Node current = head;
             int i = 0;
-            while (i < index){
+            while (i < index) {
                 current = current.next;
                 i++;
             }
-            if(current.prev == null){
+            if (current == null) {
+                addLast(item);
+            } else if (current.prev == null) {
                 Node newNode = new Node(null, item, current);
                 current.prev = newNode;
                 head = newNode;
-            }else{
+            } else {
                 Node newNode = new Node(current.prev, item, current);
-                newNode.prev = current.prev;
-                newNode.next = current;
                 current.prev.next = newNode;
                 current.prev = newNode;
             }
         }
         size++;
     }
-    int size(){
+
+    public int size() {
         return size;
     }
-    void clear(){
+
+    public void clear() {
         head = null;
         size = 0;
     }
 
-    void print(){
-        if(isEmpty()){
+    public void print() {
+        if (isEmpty()) {
             System.out.println("linked list kosong!");
-        }else{
+        } else {
             Node tmp = head;
-            while(tmp != null){
-                System.out.println(tmp.data + "\t");
+            while (tmp != null) {
+                System.out.print(tmp.data + "\t");
                 tmp = tmp.next;
             }
             System.out.println("\nberhasil diisi");
         }
     }
-        
+
+ 
 }

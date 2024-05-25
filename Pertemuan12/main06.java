@@ -1,7 +1,7 @@
 package Pertemuan12;
 
 public class main06 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         DoubleLinkedList dll = new DoubleLinkedList();
         dll.print();
         System.out.println("size = " + dll.size());
@@ -12,17 +12,16 @@ public class main06 {
         dll.print();
         System.out.println("size = "+ dll.size());
         System.out.println("=====================");
+        
         dll.add(40, 1);
+        
         dll.print();
         System.out.println("size = " + dll.size());
         System.out.println("=====================");
+        
         dll.clear();
         dll.print();
         System.out.println("size = "+ dll.size());
         System.out.println("=====================");
-
-        
-
-
     }
 }
