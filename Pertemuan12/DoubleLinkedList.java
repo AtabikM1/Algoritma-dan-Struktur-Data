@@ -87,5 +87,88 @@ public class DoubleLinkedList {
         }
     }
 
- 
+    void removeFirst() throws Exception{
+        if(isEmpty()){
+            throw new Exception("linked list kosong, tidak dapat dihapus");
+        } else if(size == 1){
+            removeLast();
+        } else{
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
+    }
+
+    void removeLast() throws Exception{
+        if(isEmpty()){
+            throw new Exception("Linked list masih kosongm tidak dapat dihapus!");
+
+        }else if(head.next == null){
+            head = null;
+            size--;
+            return;
+        }
+        Node current = head;
+        while (current.next.next != null){
+            current = current.next;
+        }
+        current.next = null;
+        size--;
+    }
+
+    void remove(int index) throws Exception {
+        if (isEmpty() || index >= size || index < 0) {
+            throw new Exception("nilai indeks diluar batas");
+        } else if (index == 0) {
+            removeFirst();
+        } else {
+            Node current = head;
+            int i = 0;
+            while (i < index) {
+                current = current.next;
+                i++;
+            }
+            // After the loop, current is at the node to be removed.
+            if (current.next == null) { // Removing the last node
+                current.prev.next = null;
+            } else if (current.prev == null) { // Removing the head node
+                head = current.next;
+                head.prev = null;
+            } else { // Removing a middle node
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+            }
+            size--;
+        }
+    }
+
+    int getFirst() throws Exception{
+        if(isEmpty()){
+            throw new Exception("linked list kosong");
+        }
+        return head.data;
+    }
+
+    int getLast() throws Exception{
+        if(isEmpty()){
+            throw new Exception("Linked list kosong");
+        }
+        Node tmp = head;
+        while (tmp.next != null){
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    int get(int index) throws Exception{
+        if(isEmpty() || index >= size){
+            throw new Exception("nilai indeks diluar batas. ");
+        }
+        Node tmp = head;
+        for (int i = 0; i < index; i++){
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+    
 }

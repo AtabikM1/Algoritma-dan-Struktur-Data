@@ -27,5 +27,6 @@ public class SLLMain {
         singLL.removeLast();
         singLL.print();
 
+        
     }
 }
