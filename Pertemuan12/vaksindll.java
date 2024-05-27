@@ -1,39 +1,68 @@
 package Pertemuan12;
 
 public class vaksindll {
-    int [] data;
-    Nodevaksin head, tail;
+    Nodevaksin head;
     int size, max;
 
-    vaksindll(int n){
+    vaksindll(int n) {
         max = n;
-        data = new int[max];
         size = 0;
-        head = tail;
+        head = null;
     }
 
-    boolean isEmpty(){
+    boolean isEmpty() {
         return head == null;
     }
 
-    boolean isFull(){
-        if(size==max){
-            return true;
-        }else{
-            return false;
+    boolean isFull() {
+        return size == max;
+    }
+
+    void print() {
+        if (isEmpty()) {
+            System.out.println("masih kosong antrian linked list");
+        } else {
+            Nodevaksin tmp = head;
+            System.out.println("no " +  " Nama " );
+            while (tmp != null) {
+                System.out.println(tmp.antrian +"   " + tmp.nama);
+                tmp = tmp.next;
+            }
+            System.out.println(" ");
+            System.out.println("sisa antrian = " + (max-size));
         }
     }
 
-    void print(){
-        if(isEmpty()){
-            System.out.println("masih kosong antrian linked list");
-        }else{
-            Nodevaksin tmp = head;
-            while (tmp!=null) {
-                System.out.println("antrian no = "+  " Nama =");
-                System.out.println(tmp.antrian+"\t"+ tmp.nama);
+    void enqueuedll(int antrian, String nama) {
+        if (isFull()) {
+            System.out.println("sudah penuh antriannya");
+        } else {
+            Nodevaksin newNode = new Nodevaksin(antrian, nama);
+            if (isEmpty()) {
+                head = newNode;
+            } else {
+                Nodevaksin current = head;
+                while (current.next != null) {
+                    current = current.next;
+                }
+                current.next = newNode;
+                newNode.prev = current;
             }
-            System.out.println(" ");
+            size++;
+        }
+    }
+
+    void dequeuedll(){
+        if(isEmpty()){
+            System.out.print("linked list masih kosong");
+        }else{
+            String telahvaksin = head.nama;
+            head = head.next;
+            if(head != null){
+                head.prev = null;
+            }
+            size--;
+            System.out.println(telahvaksin + " telah divaksinasi");
         }
     }
 }
