@@ -162,7 +162,7 @@ public class DoubleLinkedList {
 
     int get(int index) throws Exception{
         if(isEmpty() || index >= size){
-            throw new Exception("nilai indeks diluar batas. ");
+            throw new Exception("nilai indeks diluar batas. "); 
         }
         Node tmp = head;
         for (int i = 0; i < index; i++){
