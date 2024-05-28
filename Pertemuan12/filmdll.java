@@ -121,5 +121,36 @@ public class filmdll {
 
         }
     }
-    
+
+    void cetak(){
+
+    }
+    void sortingFilm() {
+        if (head == null || head.next == null) {
+            return;
+        }
+        
+        boolean swapped;
+        do {
+            swapped = false;
+            nodefilm current = head;
+            nodefilm prev = null;
+            while (current.next != null) {
+                if (current.rating > current.next.rating) {
+                    // Swap nodes
+                    nodefilm temp = current.next;
+                    current.next = temp.next;
+                    temp.next = current;
+                    if (prev == null) {
+                        head = temp;
+                    } else {
+                        prev.next = temp;
+                    }
+                    swapped = true;
+                }
+                prev = current;
+                current = current.next;
+            }
+        } while (swapped);
+    }
 }
