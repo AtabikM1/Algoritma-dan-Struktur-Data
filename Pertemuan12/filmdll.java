@@ -125,7 +125,17 @@ public class filmdll {
 
 
     void cetak(){
-
+        if (isEmpty()) {
+            System.out.println("film masih kosong");
+        }else{
+            nodefilm tmp = head;
+            while (tmp != null) {
+                System.out.println("Id = " +tmp.id);
+                System.out.println("judul = "+ tmp.judul);
+                System.out.println("rating = "+ tmp.rating);
+                tmp = tmp.next;
+            }
+        }
     }
     void sortingFilm() {
         if (head == null || head.next == null) {

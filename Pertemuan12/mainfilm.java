@@ -2,7 +2,6 @@ package Pertemuan12;
 
 import java.util.Scanner;
 
-import Pertemuan5.faktorial;
 public class mainfilm {
     public static void main(String[] args) {
         filmdll film = new filmdll();
@@ -69,7 +68,7 @@ public class mainfilm {
                     film.remove(ke);
                     break;
                 case 7:
-                    
+                    film.cetak();
                     break;
                 case 8:
                     System.out.println("masukkan id film : ");
