@@ -39,14 +39,40 @@ public class mainfilm {
                     break;
                 case 2:
                     System.out.println("masukkan id film = ");
-                    int id1 = sc.nextInt();
+                    id = sc.nextInt();
                     sc.nextLine();
                     System.out.println("masukkan judul film = ");
-                    String judul1 = sc.nextLine();
+                    judul = sc.nextLine();
                     System.out.println("masukkan rating film");
-                    float rating1 = sc.nextFloat();
-                    film.addLast(id1, judul1, rating1);
-            
+                    rating = sc.nextFloat();
+                    film.addLast(id, judul, rating);
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    System.out.println("masukkan id film : ");
+                    id = sc.nextInt();
+                    nodefilm filmditemukan = film.carifilm(id);
+                    if(filmditemukan != null){
+                        System.out.println("Identitas :");
+                        System.out.println("id film : " + filmditemukan.id);
+                        System.out.println("judul film : "+ filmditemukan.judul);
+                        System.out.println("rating imdb : "+ filmditemukan.rating);
+                    }else{
+                        System.out.println("film dengan id " + id + " tidak ditemukan");
+                    }
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
                 default:
                     break;
             }

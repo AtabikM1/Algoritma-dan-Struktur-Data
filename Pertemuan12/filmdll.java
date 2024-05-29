@@ -122,6 +122,8 @@ public class filmdll {
         }
     }
 
+
+
     void cetak(){
 
     }
@@ -152,5 +154,23 @@ public class filmdll {
                 current = current.next;
             }
         } while (swapped);
+    }
+
+    nodefilm carifilm(int cari){
+        
+        int index= 0;
+        nodefilm current = head;
+        
+        while (current != null) {
+            if(current.id == cari){
+                System.out.println("data id film = " + cari + " berada di node ke-" + index);
+                
+                return current;
+            }
+            current.next = current;
+            index++;
+        }
+        return null;
+        
     }
 }
