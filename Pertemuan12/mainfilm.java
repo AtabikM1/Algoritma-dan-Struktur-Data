@@ -47,14 +47,29 @@ public class mainfilm {
                     rating = sc.nextFloat();
                     film.addLast(id, judul, rating);
                 case 3:
+                    System.out.println("masukkan id film = ");
+                    id = sc.nextInt();
+                    System.out.println("masukkan judul film = ");
+                    judul = sc.next();
+                    System.out.println("masukkan rating film");
+                    rating = sc.nextFloat();
+                    System.out.println("data film ini akan dimasukan di urutan ke-");
+                    int ke = sc.nextInt();
+                    film.addtertentu(id, judul, rating, ke);
                     break;
                 case 4:
+                    film.removefirst();
                     break;
                 case 5:
+                    film.removelast();
                     break;
                 case 6:
+                    System.out.println("hapus urutan ke-");
+                    ke = sc.nextInt();
+                    film.remove(ke);
                     break;
                 case 7:
+                    
                     break;
                 case 8:
                     System.out.println("masukkan id film : ");
