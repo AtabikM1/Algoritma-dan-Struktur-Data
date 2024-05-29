@@ -1,5 +1,6 @@
 package Pertemuan13;
 
+import Kuis2.Node;
 import Pertemuan12.nodefilm;
 
 public class BinaryTree06 {
@@ -79,6 +80,20 @@ public class BinaryTree06 {
             System.out.println(" "+ node.data);
             traversePreOrder(node.right);
         }
+    }
+
+    Node06 getsuccesor(Node06 del){
+        Node06 succesor = del.right;
+        Node06 succesorparrent = del;
+        while(succesor.left!= null){
+            succesorparrent = succesor;
+            succesor = succesor.left;
+        }
+        if(succesor!=del.right){
+            succesorparrent.left = succesor.right;
+            succesor.right = del.right;
+        }
+        return succesor;
     }
 
 }
