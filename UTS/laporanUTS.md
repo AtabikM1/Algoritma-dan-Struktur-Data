@@ -27,3 +27,5 @@ Simulasi pengurutan dilakukan secara ascending dan descending!
         50 50 50 47 43 43 38 38 38 36 31 31 31 26 23 10 2 0 0 (pengurutan descending)
         indeks dari 23 = 14 (hasil searching setelah descending)
         indeks dari 13 = -1 (hasil searching tidak ditemukan)
+
+        
