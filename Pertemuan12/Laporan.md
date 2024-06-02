@@ -381,3 +381,101 @@ head.prev = null;
 4. Jelaskan fungsi kode program berikut ini pada fungsi remove!
 
 ### percobaan 3
+
+buat 3 method baru pada double linked list
+
+            int getFirst() throws Exception{
+               if(isEmpty()){
+                     throw new Exception("linked list kosong");
+               }
+               return head.data;
+            }
+
+            int getLast() throws Exception{
+               if(isEmpty()){
+                     throw new Exception("Linked list kosong");
+               }
+               Node tmp = head;
+               while (tmp.next != null){
+                     tmp = tmp.next;
+               }
+               return tmp.data;
+            }
+
+            int get(int index) throws Exception{
+               if(isEmpty() || index >= size){
+                     throw new Exception("nilai indeks diluar batas. "); 
+               }
+               Node tmp = head;
+               for (int i = 0; i < index; i++){
+                     tmp = tmp.next;
+               }
+               return tmp.data;
+            }
+            
+         }
+
+tambahkan output pada main class
+
+               System.out.println("modifikasi ke 3");
+               System.out.println("size = "+ dll.size());
+               System.out.println("=====================");
+               dll.print();
+               dll.addFirst(3);
+               dll.addLast(4);
+               dll.addFirst(7);
+               dll.print();
+               System.out.println("size = "+ dll.size());
+               System.out.println("=====================");
+               dll.add(40, 1);
+               dll.print();
+               System.out.println("size = "+ dll.size());
+               System.out.println("=====================");
+               System.out.println("data awal pada linked list adalah = " + dll.getFirst());
+               System.out.println("data akhir pada linked list adalah = " + dll.getLast());
+               System.out.println("data pada indeks ke 1 linked list adalah = "+ dll.get(1));
+
+            }
+         }
+
+
+output program
+
+            modifikasi ke 3
+            size = 1
+            =====================
+            40
+            berhasil diisi
+            7       3       40      4
+            berhasil diisi
+            size = 4
+            =====================
+            7       40      3       40      4
+            berhasil diisi
+            size = 5
+            =====================
+            data awal pada linked list adalah = 7
+            data akhir pada linked list adalah = 4
+            data pada indeks ke 1 linked list adalah = 40
+
+
+### 12.4.3 Pertanyaan Percobaan
+1. Jelaskan method size() pada class DoubleLinkedLists!
+2. Jelaskan cara mengatur indeks pada double linked lists supaya dapat dimulai dari indeks ke1!
+3. Jelaskan perbedaan karakteristik fungsi Add pada Double Linked Lists dan Single Linked Lists! 
+4. Jelaskan perbedaan logika dari kedua kode program di bawah ini!
+
+
+### 12.5 Tugas Praktikum
+Waktu : 100 Menit
+1. Buat program antrian vaksinasi menggunakan queue berbasis double linked list sesuai ilustrasi 
+dan menu di bawah ini! (counter jumlah antrian tersisa di menu cetak(3) dan data orang yang 
+telah divaksinasi di menu Hapus Data(2) harus ada)
+Contoh Ilustrasi Program
+Menu Awal dan Penambahan Data
+
+2. Buatlah program daftar film yang terdiri dari id, judul dan rating menggunakan double linked 
+lists, bentuk program memiliki fitur pencarian melalui ID Film dan pengurutan Rating secara 
+descending. Class Film wajib diimplementasikan dalam soal ini.
+Contoh Ilustrasi Program
+Menu Awal dan Penambahan Data
