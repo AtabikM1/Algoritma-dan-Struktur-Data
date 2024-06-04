@@ -357,6 +357,7 @@ fungsinya untuk melakukan traversal in order pada pohon biner yang terrepresenta
 
 4. Jika suatu node binary tree disimpan dalam array indeks 2, maka di indeks berapakah posisi 
 left child dan rigth child masin-masing?
+
 Indeks child kiri suatu node yang terletak pada indeks i dalam array adalah
 indeks_child_kiri = 2 * i + 1, 2. Posisi Child Kanan
 Indeks child kanan suatu node yang terletak pada indeks i dalam array adalah
@@ -423,18 +424,18 @@ paling besar yang ada di dalam tree.
 
 3. Buat method di dalam class BinaryTree untuk menampilkan data yang ada di leaf.
 
-       // Metode untuk menampilkan data di leaf (daun) pohon biner
-    void displayLeafData(Node06 node) {
-        if (node == null) {
-            return;
-        }
-        if (node.left == null && node.right == null) {//saat kanan dan kiri sudah null berarti  node.data adalah daun karena tidak memiliki anak
-            System.out.print(node.data + " ");
-        } else {
-            displayLeafData(node.left);
-            displayLeafData(node.right);
-        }
-    }
+            // Metode untuk menampilkan data di leaf (daun) pohon biner
+            void displayLeafData(Node06 node) {
+                if (node == null) {
+                    return;
+                }
+                if (node.left == null && node.right == null) {//saat kanan dan kiri sudah null berarti  node.data adalah daun karena tidak memiliki anak
+                    System.out.print(node.data + " ");
+                } else {
+                    displayLeafData(node.left);
+                    displayLeafData(node.right);
+                }
+            }
 
 4. Buat method di dalam class BinaryTree untuk menampilkan berapa jumlah leaf yang ada 
 di dalam tree.
@@ -449,9 +450,50 @@ di dalam tree.
                     return hitungdaun(node.left) + hitungdaun(node.right);
                 }
             }
-            
+
 5. Modifikasi class BinaryTreeArray, dan tambahkan : 
 • method add(int data) untuk memasukan data ke dalam tree 
+
+            void add(int data) {
+                if (size == this.data.length) {
+                    tambahkapasitas();
+                }
+                idxlast++;
+                this.data[idxlast] = data;
+                size++;
+            }
+
+            void tambahkapasitas() {
+                int[] newData = new int[data.length * 2];
+                System.arraycopy(data, 0, newData, 0, data.length);
+                data = newData;
+            }
+
 • method traversePreOrder() dan traversePostOrder()
+
+                void traversePreOrder() {
+                    traversePreOrder(0);
+                }
+
+                void traversePreOrder(int idx) {
+                    if (idx <= idxlast && data[idx] != 0) {
+                        System.out.print(data[idx] + " ");
+                        traversePreOrder(2 * idx + 1);
+                        traversePreOrder(2 * idx + 2);
+                    }
+                }
+
+                void traversePostOrder() {
+                    traversePostOrder(0);
+                }
+
+                void traversePostOrder(int idx) {
+                    if (idx <= idxlast && data[idx] != 0) {
+                        traversePostOrder(2 * idx + 1);
+                        traversePostOrder(2 * idx + 2);
+                        System.out.print(data[idx] + " ");
+                    }
+                }
+    
 
  
