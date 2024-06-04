@@ -257,10 +257,22 @@ hasil running program
 ### 13.2.2 Pertanyaan Percobaan
 1. Mengapa dalam binary search tree proses pencarian data bisa lebih efektif dilakukan dibanding 
 binary tree biasa?
+
+karena binary search tree memiliki beberapa keunggulan dalam mencari data, seperti struktur yang terurut, algoritma findbinary yang membagi dua pohon secara berulang berdasarkan nilai kunci yang dicari
+
 2. Untuk apakah di class Node, kegunaan dari atribut left dan right?
+
+atribut left berdungsi untuk menunjuk ke subpohon kiri, yang nilainya lebih kecil dari pada node saat ini, kemudian atribut right merujjuk pada subpohon kanan dari node tersebut, subpohon kanan berisi semua node yang nilainya lebih besar daripada nilai node saat ini
+
 3. a. Untuk apakah kegunaan dari atribut root di dalam class BinaryTree?
+
+root memiliki fungsi untuk menentukan struktur fungsionalitas pohon. berperan sebagai simpul akar dari binary tree. 
 b. Ketika objek tree pertama kali dibuat, apakah nilai dari root?
+nilai dari root adalah null
 4. Ketika tree masih kosong, dan akan ditambahkan sebuah node baru, proses apa yang akan terjadi?
+
+ketika tree masih kosong, tidak memiliki perbandingan nilai yang diperlukan untuk posisi baru, maka secara otomatis menjadi simpul akar karena tidak ada node lain selain tree
+
 5. Perhatikan method add(), di dalamnya terdapat baris program seperti di bawah ini. Jelaskan 
 secara detil untuk apa baris program tersebut?
 
@@ -272,6 +284,18 @@ secara detil untuk apa baris program tersebut?
             break;
             }
             }
+
+1. Baris if (data < current.data)
+melakukan pengecekan nilai data yang ingin ditambahkan dengan nilai current.data.
+
+2. Jika data < current.data
+berarti nilai yang ingin ditambahkan lebih kecil daripada nilai node saat ini. Hal ini menunjukkan bahwa node baru harus ditempatkan di subpohon kiri dari node saat ini.
+
+3. Baris current.left = new Node(data)
+mengalokasikan node baru dengan nilai data dan memasukkannya sebagai child kiri dari node saat ini.
+
+4. break saat current left sudah di instansiasi
+
 
 ### program binary tree dengan array
 
@@ -320,7 +344,11 @@ buat class main
 
 ### 13.3.2 Pertanyaan Percobaan
 1. Apakah kegunaan dari atribut data dan idxLast yang ada di class BinaryTreeArray?
+
+kegunaan atribut data untuk menyimpan data elemen-elemen pohon. kegunaan idxlast untuk menandai indeks terakhir elemen yang terisi dalam array data.
+
 2. Apakah kegunaan dari method populateData()?
+fungsinya untuk mengisi data pohon dari sumber eksternal, 
 3. Apakah kegunaan dari method traverseInOrder()?
 4. Jika suatu node binary tree disimpan dalam array indeks 2, maka di indeks berapakah posisi 
 left child dan rigth child masin-masing?
@@ -339,3 +367,5 @@ di dalam tree.
 5. Modifikasi class BinaryTreeArray, dan tambahkan : 
 • method add(int data) untuk memasukan data ke dalam tree 
 • method traversePreOrder() dan traversePostOrder()
+
+ 
