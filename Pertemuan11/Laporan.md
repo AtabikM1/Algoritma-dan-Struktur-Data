@@ -295,7 +295,12 @@ berfungsi untuk mengecek apakah node yang berada setelah 'temp' memiliki nilai y
 1 Implementasikan ilustrasi Linked List Berikut. Gunakan 4 macam penambahan data yang telah
 dipelajari sebelumnya untuk menginputkan data.
 
+sudah saya terapkan pada package sini.
+
 2 Buatlah implementasi program antrian layanan unit kemahasiswaan sesuai dengan kondisi yang
 ditunjukkan pada soal nomor 1! Ketentuan
 a. Implementasi antrian menggunakan Queue berbasis Linked List!
+
 b. Program merupakan proyek baru, bukan modifikasi dari soal nomor 1!
+
+baik, sudah saya terapkan pada package sini.
