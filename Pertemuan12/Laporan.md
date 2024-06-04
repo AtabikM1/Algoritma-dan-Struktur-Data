@@ -259,19 +259,38 @@ verifikasi hasil pekerjaan
 
 ### 12.2.3 Pertanyaan Percobaan
 1. Jelaskan perbedaan antara single linked list dengan double linked lists!
+
+ada pada bagian pointer prev di dll, yang menunjukan kode sebelumnya dan pointer next yang menunjukan ke node selanjutnya, sedangkan pada single linked list hanya memiliki pointer next
+
 2. Perhatikan class Node, di dalamnya terdapat atribut next dan prev. Untuk apakah atribut 
 tersebut?
+untuk menunjukkan objek setelah dan sebelumnya. 
+
 3. Perhatikan konstruktor pada class DoubleLinkedLists. Apa kegunaan inisialisasi atribut head dan 
 size seperti pada gambar berikut ini?
+
+untuk inisialisasi pada awal dll yang kosong.
+
 4. Pada method addFirst(), kenapa dalam pembuatan object dari konstruktor class Node prev 
 dianggap sama dengan null?
 Node newNode = new Node(null, item, head);
+
+karena pada node pertama, prev dan next memang bernilai null
+
 5. Perhatikan pada method addFirst(). Apakah arti statement head.prev = newNode ?
+
+jika head sebelumnya sudah memiliki nilai, maka sebelum dari head akan dibuat menjadi new node
+
 6. Perhatikan isi method addLast(), apa arti dari pembuatan object Node dengan mengisikan 
 parameter prev dengan current, dan next dengan null?
 Node newNode = new Node(current, item, null);
+
+posisi pada node akhir tidak perlu mengisi ppointer next
+
 7. Pada method add(), terdapat potongan kode program sebagai berikut:
 jelaskan maksud dari bagian yang ditandai dengan kotak kuning.
+
+maksud dari potongan program tersebut adalah saat kita ingin menyisipkan node baru di awal dari dll, dengan langkah mengecek apakah current adalah node pppertama. jika node baru yang menunjuk current sebagai node berikutnya. node current akan memperbarui untuk menunjuk kembali ke node baru sebagai node sebelumnya, ppointer head berguna untuk menunjuk node baru sebagai node yang pertama.
 
 ### 12.3 Kegiatan Praktikum 2
 
@@ -376,10 +395,20 @@ hasil percobaan
 1. Apakah maksud statement berikut pada method removeFirst()?
 head = head.next;
 head.prev = null;
+
+untuk merubah posisi head pada node selanjutnya, dan menghapus node pertama atau head sebelumnya.
+
 2. Bagaimana cara mendeteksi posisi data ada pada bagian akhir pada method removeLast()?
+
+dengan menggunakan looping while hingga nixt dari node bernilai null yang berarti bahwa node tersebut adalah node paling ujung, node tersebut disimpan dalam variabel tmp dan data terakhir adalah tmp.
+
 3. Jelaskan alasan potongan kode program di bawah ini tidak cocok untuk perintah remove!
+
+karena node yang dihapus merupakan node pertama (head). atau terakhir, maka perlu penanganan khusus. jika node pertama, maka head perlu diperbarui. jika node terakhir dan tmp adalah null. maka tmp.next.prev akan menimbulkan kesalahan, jika potongan tersebut tetap dijalankan, maka struktur data yang tersambung akan error karena hubungan pre-nextt yang tidak konsisten
+
 4. Jelaskan fungsi kode program berikut ini pada fungsi remove!
 
+sebagai pengganti referensi next dari node sebelum node current yang di remobe dengan node setelah node current, dan mengganti referensi prev node setelah current dengan node sebelum current
 ### percobaan 3
 
 buat 3 method baru pada double linked list
@@ -461,9 +490,20 @@ output program
 
 ### 12.4.3 Pertanyaan Percobaan
 1. Jelaskan method size() pada class DoubleLinkedLists!
+
+untuk menampilkan banyaknya node yang ada pada linked list
+
 2. Jelaskan cara mengatur indeks pada double linked lists supaya dapat dimulai dari indeks ke1!
+
+sebelum melakukan perulangan, tmp diisi dengan head.next
+
 3. Jelaskan perbedaan karakteristik fungsi Add pada Double Linked Lists dan Single Linked Lists! 
+
+konsep fungsi add sama seoerti menambah node baru pada index yang ditentukan, yang membedakan adalah add pada dll harus mengganti posisi prev dan next sedangkan single linked list hanya next
+
 4. Jelaskan perbedaan logika dari kedua kode program di bawah ini!
+
+yang pertama pada program adalah mengecek size, jika size = 0 maka esEmpty bernilai true, pada kode selanjutnya mengembalikan nilai null, jika nilai head == null akan mengembalikan nilai false ataupun sebaliknya
 
 
 ### 12.5 Tugas Praktikum
@@ -474,8 +514,12 @@ telah divaksinasi di menu Hapus Data(2) harus ada)
 Contoh Ilustrasi Program
 Menu Awal dan Penambahan Data
 
+sudah saya buat pada package disini
+
 2. Buatlah program daftar film yang terdiri dari id, judul dan rating menggunakan double linked 
 lists, bentuk program memiliki fitur pencarian melalui ID Film dan pengurutan Rating secara 
 descending. Class Film wajib diimplementasikan dalam soal ini.
 Contoh Ilustrasi Program
 Menu Awal dan Penambahan Data
+
+sudah saya buat pada package disini
