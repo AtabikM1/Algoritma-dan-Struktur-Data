@@ -160,4 +160,70 @@ public class BinaryTree06 {
             }
         }
     }
+
+    void addRecursive(int data) {
+        root = rekursifkonsep(root, data);
+    }
+
+    private Node06 rekursifkonsep(Node06 current, int data) {
+        if (current == null) {
+            // Jika node saat ini kosong, buat node baru dengan data yang diberikan
+            return new Node06(null, data, null);
+        }
+
+        if (data < current.data) {
+            // Jika data yang akan ditambahkan lebih kecil, tambahkan ke subtree kiri
+            current.left = rekursifkonsep(current.left, data);
+        } else if (data > current.data) {
+            // Jika data yang akan ditambahkan lebih besar, tambahkan ke subtree kanan
+            current.right = rekursifkonsep(current.right, data);
+        }
+        // Jika data sama, tidak perlu melakukan apa-apa karena data sudah ada
+
+        return current;
+    }
+    // Metode untuk menemukan nilai paling kecil di dalam tree
+    int findMin() {
+        if (isEmpty()) {
+            throw new RuntimeException("Tree is empty");
+        }
+        Node06 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+    // Metode untuk menemukan nilai paling besar di dalam tree
+    int findMax() {
+        if (isEmpty()) {
+            throw new RuntimeException("Tree is empty");
+        }
+        Node06 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.data;
+    }
+    // Metode untuk menampilkan data di leaf (daun) pohon biner
+    void displayLeafData(Node06 node) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {//saat kanan dan kiri sudah null berarti  node.data adalah daun karena tidak memiliki anak
+            System.out.print(node.data + " ");
+        } else {
+            displayLeafData(node.left);
+            displayLeafData(node.right);
+        }
+    }
+    int hitungdaun(Node06 node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            return 1;
+        } else {
+            return hitungdaun(node.left) + hitungdaun(node.right);
+        }
+    }
 }

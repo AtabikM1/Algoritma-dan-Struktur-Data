@@ -348,22 +348,108 @@ buat class main
 kegunaan atribut data untuk menyimpan data elemen-elemen pohon. kegunaan idxlast untuk menandai indeks terakhir elemen yang terisi dalam array data.
 
 2. Apakah kegunaan dari method populateData()?
+
 fungsinya untuk mengisi data pohon dari sumber eksternal, 
+
 3. Apakah kegunaan dari method traverseInOrder()?
+
+fungsinya untuk melakukan traversal in order pada pohon biner yang terrepresentasi dalam array, iterasinya akan menelusuri seluruh node pada binary tree
+
 4. Jika suatu node binary tree disimpan dalam array indeks 2, maka di indeks berapakah posisi 
 left child dan rigth child masin-masing?
-5. Apa kegunaan statement int idxLast = 6 pada praktikum 2 percobaan nomor 4?               
+Indeks child kiri suatu node yang terletak pada indeks i dalam array adalah
+indeks_child_kiri = 2 * i + 1, 2. Posisi Child Kanan
+Indeks child kanan suatu node yang terletak pada indeks i dalam array adalah
+indeks_child_kanan = 2 * i + 2
+
+
+5. Apa kegunaan statement int idxLast = 6 pada praktikum 2 percobaan nomor 4?  
+
+untuk menentukan ukuran aktual dari pohon biner yang disimpan dalam representasi array
 
 
 ### 13.4 Tugas Praktikum
 Waktu pengerjaan: 90 menit
 1. Buat method di dalam class BinaryTree yang akan menambahkan node dengan cara 
 rekursif.
+
+                    void addRecursive(int data) {
+                        root = rekursifkonsep(root, data);
+                    }
+
+                    private Node06 rekursifkonsep(Node06 current, int data) {
+                        if (current == null) {
+                            // Jika node saat ini kosong, buat node baru dengan data yang diberikan
+                            return new Node06(null, data, null);
+                        }
+
+                        if (data < current.data) {
+                            // Jika data yang akan ditambahkan lebih kecil, tambahkan ke subtree kiri
+                            current.left = rekursifkonsep(current.left, data);
+                        } else if (data > current.data) {
+                            // Jika data yang akan ditambahkan lebih besar, tambahkan ke subtree kanan
+                            current.right = rekursifkonsep(current.right, data);
+                        }
+                        // Jika data sama, tidak perlu melakukan apa-apa karena data sudah ada
+
+                        return current;
+                    }
+
 2. Buat method di dalam class BinaryTree untuk menampilkan nilai paling kecil dan yang 
 paling besar yang ada di dalam tree.
+
+            // Metode untuk menemukan nilai paling kecil di dalam tree
+                int findMin() {
+                    if (isEmpty()) {
+                        throw new RuntimeException("Tree is empty");
+                    }
+                    Node06 current = root;
+                    while (current.left != null) {
+                        current = current.left;
+                    }
+                    return current.data;
+                }
+                // Metode untuk menemukan nilai paling besar di dalam tree
+                int findMax() {
+                    if (isEmpty()) {
+                        throw new RuntimeException("Tree is empty");
+                    }
+                    Node06 current = root;
+                    while (current.right != null) {
+                        current = current.right;
+                    }
+                    return current.data;
+                }
+
 3. Buat method di dalam class BinaryTree untuk menampilkan data yang ada di leaf.
+
+       // Metode untuk menampilkan data di leaf (daun) pohon biner
+    void displayLeafData(Node06 node) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {//saat kanan dan kiri sudah null berarti  node.data adalah daun karena tidak memiliki anak
+            System.out.print(node.data + " ");
+        } else {
+            displayLeafData(node.left);
+            displayLeafData(node.right);
+        }
+    }
+
 4. Buat method di dalam class BinaryTree untuk menampilkan berapa jumlah leaf yang ada 
 di dalam tree.
+
+            int hitungdaun(Node06 node) {
+                if (node == null) {
+                    return 0;
+                }
+                if (node.left == null && node.right == null) {
+                    return 1;
+                } else {
+                    return hitungdaun(node.left) + hitungdaun(node.right);
+                }
+            }
+            
 5. Modifikasi class BinaryTreeArray, dan tambahkan : 
 • method add(int data) untuk memasukan data ke dalam tree 
 • method traversePreOrder() dan traversePostOrder()

@@ -29,6 +29,15 @@ public class Binarytreemain06 {
         System.out.println("peorder traversal = ");
         bt.traversePreOrder(bt.root);
         System.out.println(" ");
-        
+        bt.addRecursive(10);
+        bt.addRecursive(5);
+        bt.addRecursive(20);
+        bt.addRecursive(3);
+        bt.addRecursive(7);
+        bt.traverseInOrder(bt.root);
+        System.out.println("\nNilai paling kecil: " + bt.findMin());
+        System.out.println("Nilai paling besar: " + bt.findMax());
+        System.out.print("Data di leaf: ");
+        bt.displayLeafData(bt.root);
     }
 }
