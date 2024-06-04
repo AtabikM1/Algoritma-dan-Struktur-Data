@@ -506,6 +506,19 @@ panggil pada class main
         case 5 : 
                             antri.peekrear();
 
+### 10.4 Tugas
+1. Buatlah program antrian untuk mengilustasikan pesanan disebuah warung. Ketika seorang 
+pembeli akan mengantri, maka dia harus mendaftarkan nama, dan nomor HP seperti yang 
+digambarkan pada Class diagram berikut:• Method create(), isEmpty(), isFull(), enqueue(), dequeue() dan print(), kegunaannya sama seperti 
+yang telah dibuat pada Praktikum
+• Method peek(): digunakan untuk menampilkan data Pembeli yang berada di posisi antrian paling 
+depan
+• Method peekRear(): digunakan untuk menampilkan data Pembeli yang berada di posisi antrian 
+paling belakang
+• Method peekPosition(): digunakan untuk menampilkan seorang pembeli (berdasarkan nama)
+posisi antrian ke berapa
+• Method daftarPembeli(): digunakan untuk menampilkan data seluruh pembeli 
 
+sudah saya kerjakan pada package disini
 
 
