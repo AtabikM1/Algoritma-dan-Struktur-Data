@@ -84,8 +84,10 @@ public class mainfilm {
                     }
                     break;
                 case 9:
+                
                     break;
                 case 10:
+                running = false;
                     break;
                 default:
                     break;

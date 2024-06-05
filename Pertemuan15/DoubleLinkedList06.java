@@ -192,4 +192,18 @@ public class DoubleLinkedList06 {
         }
         return current != null ? current.data : -1; // return -1 if index is out of bounds
     }
+
+    public void updateJarak(int index, int newJarak) throws Exception {
+        if (index < 0 || index >= size) {
+            throw new Exception("Index out of bounds");
+        }
+        Node06 current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        current.jarak = newJarak;
+    }
+    
+
+    
 }

@@ -1,7 +1,10 @@
 package Pertemuan15;
 
+import java.util.Scanner;
+
 public class GraphMainMatriks06 {
     public static void main(String[] args) {
+        
         GraphMatriks06 gdg = new GraphMatriks06(4);
         gdg.makeegde(   0, 1, 50);
         gdg.makeegde(1, 0, 60);
@@ -13,5 +16,9 @@ public class GraphMainMatriks06 {
         System.out.println("hasil setelah penghapusan edge");
         gdg.removeedge(2, 1);
         gdg.printGraph();
+
+
+        
     }
+
 }

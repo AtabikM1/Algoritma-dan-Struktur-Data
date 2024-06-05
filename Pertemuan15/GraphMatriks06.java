@@ -27,4 +27,26 @@ public class GraphMatriks06 {
             System.out.println();
         }
     }
+    void degree(int asal){
+        int k, totalIn = 0, totalout = 0;
+        
+            //indegree
+            for(int j = 0; j < vertex; j++){
+                if(matriks[j][asal] != 0){
+                    totalIn++;
+                }
+            }
+            //outdegree
+            for(k = 0; k < vertex ; k++){
+                if(matriks[k][asal] != 0){
+                    totalout++;
+                }
+            }
+            totalout = k;
+        
+        System.out.println("in Degree dari gedung " + (char)('A' + asal)+ ": "+ totalIn);
+        System.out.println("out Degree dari gedung "+ (char)('A' + asal)+ ": "+totalout);
+        System.out.println("Degree dari gedung "+ (char)('A' + asal)+ ": "+ (totalIn + totalout));
+
+    }
 }

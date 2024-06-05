@@ -3,6 +3,7 @@ package Pertemuan15;
 public class Graph06 {
     int vertex;
     DoubleLinkedList06 list[];
+    Node06 head;
     
     Graph06(int v){
         vertex = v;
@@ -57,5 +58,42 @@ public class Graph06 {
         }
         System.out.println();
     }
+    void removeEdge(int asal, int tujuan) throws Exception{
+        for (int i =0; i < vertex; i++){
+            if(i== tujuan){
+                list[asal].remove(tujuan);
+            }
+        }
+    }
+    boolean checkEdge(int asal, int tujuan) {
+        for (int i = 0; i < list[asal].size(); i++) {
+            if (list[asal].get(i) == tujuan) {
+                System.out.println("edge antara " + asal + " dan " + tujuan + " ada ");
+                return true;
 
+            }
+        }
+        return false;
+    }
+    void updateJarak(int asal, int tujuan, int newJarak) {
+        boolean edgeFound = false;
+        for (int i = 0; i < list[asal].size(); i++) {
+            if (list[asal].get(i) == tujuan) {
+                try {
+                    list[asal].updateJarak(i, newJarak);
+                    System.out.println("Jarak updated antara " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " menjadi " + newJarak + " m");
+                    edgeFound = true;
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }
+        }
+        if (!edgeFound) {
+            System.out.println("Edge antara " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " tidak ditemukan");
+        }
+    }
+
+
+    
 }
