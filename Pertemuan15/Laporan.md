@@ -579,3 +579,11 @@ Pengguna dapat memilih menu program melalui input Scanner
 antara dua node asal dan tujuan!
 sudah saya tambah pada package disini
 3. Tambahkan method hitungEdge untuk menghitung banyaknya edge yang terdapat di dalam graf!
+
+            void hitungEdge() {
+                    int totalEdges = 0;
+                    for (int i = 0; i < vertex; i++) {
+                        totalEdges += list[i].size();
+                    }
+                    System.out.println("Total jumlah tepi dalam graf: " + totalEdges);
+                }

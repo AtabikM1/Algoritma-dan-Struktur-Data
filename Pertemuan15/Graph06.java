@@ -93,7 +93,13 @@ public class Graph06 {
             System.out.println("Edge antara " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " tidak ditemukan");
         }
     }
-
+    void hitungEdge() {
+        int totalEdges = 0;
+        for (int i = 0; i < vertex; i++) {
+            totalEdges += list[i].size();
+        }
+        System.out.println("Total jumlah tepi dalam graf: " + totalEdges);
+    }
 
     
 }
