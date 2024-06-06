@@ -84,7 +84,8 @@ public class mainfilm {
                     }
                     break;
                 case 9:
-                
+                    film.sortingFilm();
+                    film.cetak();
                     break;
                 case 10:
                 running = false;
