@@ -2,7 +2,7 @@ package Pertemuan16;
 
 import java.util.Stack;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
+import java.util.Iterator;
 
 public class LoopCollection {
     public static void main(String[] args) {
@@ -31,8 +31,12 @@ public class LoopCollection {
         }
         System.out.println("");
         fruits.stream().forEach(e -> {
-            
+            System.out.printf("%s ", e);
         });
+        System.out.println("");
+        for (int i = 0; i < fruits.size(); i++){
+            System.out.printf("%s ", fruits.get(i));
+        }
     }
     
 }
